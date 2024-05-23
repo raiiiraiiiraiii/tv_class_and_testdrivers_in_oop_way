@@ -35,9 +35,23 @@ class TV:
             self.channel -= 1
 
 # Create method to get the current volume level
+    def get_Volume_Level(self):
+        return self.volume_level
 # Create method to set the volume level within the range of 1 to 7
+    def set_Volume_Level(self, volume_level):
+        if 1 <= volume_level<= 7:
+            self.volume_level = volume_level
 # Method to increase the volume by 1, if the TV is on and the volume is less than 7
+    def Volume_Level_up(self):
+        if self.on and self.volume_level < 7:
+            self.volume_level += 1
+        elif self.volume_level == 7:
+            print("Volume limit reached!")
 # Method to decrease the volume by 1, if the TV is on and the volume is greater than 1
+    def Volume_Level_down(self):
+        if self.on and self.volume_level > 1:
+            self.volume_level -= 1
+
 
 
 
