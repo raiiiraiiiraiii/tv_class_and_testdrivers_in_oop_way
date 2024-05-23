@@ -54,7 +54,30 @@ def control_tv(tv, other_tv):
             break
 
         show_status(tv, other_tv)
+
 # Display the options for controlling the TV
+while True:
+    print("\nOptions:")
+    print("1. Turn on TV1")
+    print("2. Turn on TV2")
+    print("3. Show the two TV status")
+    print("4. Exit the program")
 # Get the user's choice and validate it
+    choice = validate("Enter your choice: ", range(1, 5))
 # Perform the corresponding action based on the user's input
+    if choice == 1:
+        tv1.turnOn()
+        print("TV1 turned on")
+        control_tv(tv1, tv2)
+    elif choice == 2:
+        tv2.turnOn()
+        print("TV2 turned on")
+        control_tv(tv2, tv1)
+    elif choice == 3:
+        show_status(tv1, tv2)
+    elif choice == 4:
+        print("TVs are turning off...")
+        tv1.turnOff()
+        tv2.turnOff()
+        break
 
