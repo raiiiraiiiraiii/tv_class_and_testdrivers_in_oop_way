@@ -1,5 +1,5 @@
 # Import TV class
-from TV import TV
+from tv import TV
 
 # Create the two TV objects
 tv1 = TV()
