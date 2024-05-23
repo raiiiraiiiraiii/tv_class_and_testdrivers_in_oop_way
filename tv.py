@@ -9,7 +9,6 @@ class TV:
         self.channel = 1
         self.volume_level = 1
         self.on = False
-
 # Create method to turn on the TV
     def turn_on(self):
         self.on = True
