@@ -2,6 +2,8 @@
 from TV import TV
 
 # Create the two TV objects
+tv1 = TV()
+tv2 = TV()
 
 # A function to display the status of both TVs
 
