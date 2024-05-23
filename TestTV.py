@@ -37,7 +37,7 @@ def control_tv(tv, other_tv):
         choice = validate("Enter your choice: ", range(1, 8))
 # Perform the corresponding action based on the user
         if choice == 1:
-            tv.channe_lUp()
+            tv.channel_Up()
         elif choice == 2:
             tv.channe_Down()
         elif choice == 3:
@@ -66,18 +66,18 @@ while True:
     choice = validate("Enter your choice: ", range(1, 5))
 # Perform the corresponding action based on the user's input
     if choice == 1:
-        tv1.turnOn()
+        tv1.turn_On()
         print("TV1 turned on")
         control_tv(tv1, tv2)
     elif choice == 2:
-        tv2.turnOn()
+        tv2.turn_On()
         print("TV2 turned on")
         control_tv(tv2, tv1)
     elif choice == 3:
         show_status(tv1, tv2)
     elif choice == 4:
         print("TVs are turning off...")
-        tv1.turnOff()
-        tv2.turnOff()
+        tv1.turn_Off()
+        tv2.turn_Off()
         break
 
