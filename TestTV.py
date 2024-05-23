@@ -1,12 +1,16 @@
+# Import TV class
 from tv import TV
+
+# Create the two TV objects
 tv1 = TV()
 tv2 = TV()
 
+# A function to display the status of both TVs
 def show_status(tv1, tv2):
     print(f"\ntv1's channel is {tv1.get_channel()} and volume level is {tv1.get_volume_level()}")
     print(f"tv2's channel is {tv2.get_channel()} and volume level is {tv2.get_volume_level()}\n")
 
-
+# A function to validate user's input
 def validate(prompt, valid_range=None):
     while True:
         try:
@@ -18,7 +22,7 @@ def validate(prompt, valid_range=None):
         except ValueError:
             print("Invalid input. Please enter an integer.")
 
-
+# Display the main options for the program
 def control_tv(tv, tv_label):
     while True:
         print(f"\nControlling {tv_label}:")
@@ -30,8 +34,10 @@ def control_tv(tv, tv_label):
         print("6. Set Volume (1-7)")
         print("7. Back to TV selection")
 
+        # Get the user's choice and validate it
         choice = validate("Enter your choice: ", range(1, 8))
 
+        # Perform the corresponding action based on the user
         if choice == 1:
             tv.channel_up()
         elif choice == 2:
@@ -53,7 +59,7 @@ def control_tv(tv, tv_label):
 
 
 def main():
-
+    # Display the options for controlling the TV
     while True:
         print("\nOptions:")
         print("1. Turn on TV1")
@@ -61,8 +67,10 @@ def main():
         print("3. Show the two TV status")
         print("4. Exit the program")
 
+        # Get the user's choice and validate it
         choice = validate("Enter your choice: ", range(1, 5))
 
+        # Perform the corresponding action based on the user's input
         if choice == 1:
             tv1.turn_on()
             print("TV1 turned on")
