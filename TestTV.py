@@ -7,8 +7,8 @@ tv2 = TV()
 
 # A function to display the status of both TVs
 def show_status(tv1, tv2):
-    print(f"\ntv1's channel is {tv1.getChannel()} and volume level is {tv1.getVolumeLevel()}")
-    print(f"tv2's channel is {tv2.getChannel()} and volume level is {tv2.getVolumeLevel()}\n")
+    print(f"\ntv1's channel is {tv1.get_Channel()} and volume level is {tv1.get_Volume_Level()}")
+    print(f"tv2's channel is {tv2.get_Channel()} and volume level is {tv2.get_Volume_Level()}\n")
 
 # A function to validate user's input
 def validate(prompt, valid_range = None):
@@ -23,9 +23,37 @@ def validate(prompt, valid_range = None):
             print("Invalid input. Please enter an integer.")
 
 # Display the main options for the program
+def control_tv(tv, other_tv):
+    while True:
+        print("\nOptions:")
+        print("1.) Increase channel by 1")
+        print("2.) Decrease channel by 1")
+        print("3.) Set Channel (1-120)")
+        print("4.) Increase volume by 1")
+        print("5.) Decrease volume by 1")
+        print("6.) Set Volume (1-7)")
+        print("7.) Back to TV selection")
 # Get the user's choice and validate it
+        choice = validate("Enter your choice: ", range(1, 8))
 # Perform the corresponding action based on the user
+        if choice == 1:
+            tv.channe_lUp()
+        elif choice == 2:
+            tv.channe_Down()
+        elif choice == 3:
+            channel = validate("Enter the channel (1-120): ", range(1, 121))
+            tv.set_Channel(channel)
+        elif choice == 4:
+            tv.Volume_Level_up()
+        elif choice == 5:
+            tv.Volume_Level_down()
+        elif choice == 6:
+            volume = validate("Enter the volume level (1-7): ", range(1, 8))
+            tv.set_Volume_Level(volume)
+        elif choice == 7:
+            break
 
+        show_status(tv, other_tv)
 # Display the options for controlling the TV
 # Get the user's choice and validate it
 # Perform the corresponding action based on the user's input
